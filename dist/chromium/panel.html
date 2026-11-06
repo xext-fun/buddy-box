@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Buddy Box</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <main>
+    <header><div class="mark">B</div><div><h1>Buddy Box</h1><p>Spot your people in the feed.</p></div></header>
+    <section class="stat" aria-live="polite"><strong id="total">0</strong><span>unique handles saved</span></section>
+    <section>
+      <h2>Add handles</h2>
+      <p>Choose one or more CSV files. We find the handle column, add new names, and skip duplicates.</p>
+      <label class="upload" for="files">Choose CSV files</label>
+      <input id="files" type="file" accept=".csv,text/csv" multiple>
+      <p id="status" role="status"></p>
+    </section>
+    <section>
+      <h2>Your list</h2>
+      <div class="actions"><button id="download" type="button">Download CSV</button><button id="clear" type="button" class="secondary">Clear list</button></div>
+      <div id="handles" class="handles" aria-live="polite"></div>
+    </section>
+    <footer>Matches are checked on X, Instagram, Facebook, and TikTok as you browse. Your list stays in this browser.</footer>
+  </main>
+  <script src="handles.js"></script>
+  <script src="panel.js"></script>
+</body>
+</html>

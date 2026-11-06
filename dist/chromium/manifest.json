@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Buddy Box",
+  "version": "0.1.0",
+  "description": "Highlight posts and comments from your saved handles.",
+  "permissions": ["storage", "sidePanel"],
+  "action": { "default_title": "Open Buddy Box" },
+  "side_panel": { "default_path": "panel.html" },
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{
+    "matches": ["*://x.com/*", "*://twitter.com/*", "*://www.instagram.com/*", "*://instagram.com/*", "*://www.facebook.com/*", "*://facebook.com/*", "*://m.facebook.com/*", "*://www.tiktok.com/*", "*://tiktok.com/*", "*://m.tiktok.com/*"],
+    "js": ["content.js"], "css": ["content.css"], "run_at": "document_idle"
+  }]
+}
